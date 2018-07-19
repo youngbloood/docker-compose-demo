@@ -1,0 +1,55 @@
+version: '3'
+services:
+  web:
+    container_name: demo_web
+    restart: always
+    volumes:
+      - ./web/static:/static:z
+      - ./common/config/web/web:/web:z
+      - ./common/config/web/start.sh:/start.sh:z
+    env_file:
+      - ./common/config/web/env
+    command: /bin/ash ./start.sh
+    networks: 
+      - demo
+    depends_on:
+      - back1
+      - back2
+  back1:
+    container_name: demo_back1
+    restart: always
+    volumes:
+      - ./common/config/back1/back1:/back1:z
+    entrypoint: ./back1
+    networks:
+      - demo
+    depends_on:
+      - back2
+  back2:
+    container_name: demo_back2
+    restart: always
+    volumes:
+      - ./common/config/back2/back2:/back2:z
+    entrypoint: ./back2
+    networks:
+      - demo
+  proxy:
+    container_name: demo_proxy
+    restart: always
+    volumes:
+      - ./common/config/nginx/nginx.conf:/etc/nginx/nginx.conf:z
+    ports:
+      - 80:80
+      - 443:443
+      - 4443:4443
+    depends_on:
+      - web
+      - back1
+      - back2
+    networks: 
+      - demo
+networks: 
+  demo:
+    external: false
+
+    

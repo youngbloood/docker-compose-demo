@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  web:
+    image: alpine
+
+  back1:
+    image: alpine
+
+  back2:
+    image: alpine
+  
+  proxy:
+    image: nginx
