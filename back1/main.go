@@ -19,7 +19,7 @@ func main() {
 			w.Write([]byte(err.Error()))
 			return
 		}
-		w.Write(append(append([]byte(str), bts...)))
+		w.Write(append([]byte(str), bts...))
 	})
 	http.HandleFunc("/api/ping", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("pong !"))
