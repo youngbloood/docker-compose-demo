@@ -10,5 +10,8 @@ CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o ./common/config/web/web github
 # cp start.sh
 cp ./web/start.sh ./common/config/web/
 
+# docker-compose down
+docker-compose down
+
 # docker-compose up
 docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d
