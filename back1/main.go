@@ -13,7 +13,7 @@ func main() {
 		if err != nil {
 			w.Write([]byte(err.Error()))
 		}
-		str := "变身中级赛亚人...\n"
+		str := "变身中级赛亚人...<br>"
 		bts, err := ioutil.ReadAll(resp.Body)
 		if err != nil {
 			w.Write([]byte(err.Error()))
@@ -21,6 +21,7 @@ func main() {
 		}
 		w.Write(append([]byte(str), bts...))
 	})
+
 	http.HandleFunc("/api/ping", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("pong !"))
 	})
