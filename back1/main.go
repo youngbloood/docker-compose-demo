@@ -13,7 +13,7 @@ func main() {
 		if err != nil {
 			w.Write([]byte(err.Error()))
 		}
-		str := "我是中级赛亚人...\n"
+		str := "变身中级赛亚人...\n"
 		bts, err := ioutil.ReadAll(resp.Body)
 		if err != nil {
 			w.Write([]byte(err.Error()))
