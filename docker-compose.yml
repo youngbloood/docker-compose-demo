@@ -1,14 +1,40 @@
 version: '3'
-
 services:
   web:
     image: alpine
-
+    restart: always
+    networks: 
+      - demo
+    depends_on:
+      - back1
+      - back2
   back1:
     image: alpine
-
+    restart: always
+    networks:
+      - demo
+    depends_on:
+      - back2
   back2:
     image: alpine
-  
+    restart: always
+    networks:
+      - demo
   proxy:
     image: nginx
+    container_name: demo_proxy
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - web
+      - back1
+      - back2
+    networks: 
+      - demo
+networks: 
+  demo:
+    external: false
+
+    
