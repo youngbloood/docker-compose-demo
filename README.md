@@ -12,4 +12,4 @@ replace the your.domain.com with value in step 1
 ```
 ./install.sh
 ```
-#### 4.open the browser and input your domain
+#### 4.open the browser and input your.domain.com
