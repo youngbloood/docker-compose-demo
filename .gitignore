@@ -12,6 +12,6 @@
 *.out
 
 # binary file
-./common/config/back1/back1
-./common/config/back2/back2
-./common/config/web/web
+common/config/back1/back1
+common/config/back2/back2
+common/config/web/web
