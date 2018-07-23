@@ -13,15 +13,29 @@ services:
   back1:
     image: alpine
     container_name: demo_back1
+    command: apk add --no-cache curl 
     volumes:
       - ./common/config/back1/back1:/back1:z
     entrypoint: ./back1
+    healthcheck:
+      test: curl -f http://back1:9090/api/ping || exit 1
+      interval: 10s
+      timeout: 10s
+      retries: 3
+      # start_period: 40s
   back2:
     image: alpine
     container_name: demo_back2
+    command: apk add --no-cache curl 
     volumes:
       - ./common/config/back2/back2:/back2:z
     entrypoint: ./back2
+    healthcheck:
+      test: curl -f http://back2:9090/api/ping || exit 1
+      interval: 10s
+      timeout: 10s
+      retries: 3
+      # start_period: 40s
   proxy:
     image: nginx
     container_name: demo_proxy
