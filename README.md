@@ -8,7 +8,7 @@
 ```
 replace the your.domain.com with value in step 1
 ```
-#### 3.do the command
+#### 3.run the command
 ```
 ./install.sh
 ```
