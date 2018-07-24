@@ -5,6 +5,8 @@ services:
       context: .
       dockerfile: ./web/Dockerfile
     image: demo-web
+    env_file:
+      - /env
   back1:
     build: 
       context: .

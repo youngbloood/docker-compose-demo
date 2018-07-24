@@ -5,6 +5,7 @@ FROM alpine
 COPY ./common/config/web/web /web
 COPY ./web/start.sh /start.sh
 COPY ./web/static /static
+COPY ./web/env /env
 
 HEALTHCHECK --interval=10s --timeout=10s --start-period=5s --retries=3 CMD [ "curl --fail http://web:8080/ || exit 1" ]
 
