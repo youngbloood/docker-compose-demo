@@ -1,0 +1,17 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./web/Dockerfile
+    image: demo-web
+  back1:
+    build: 
+      context: .
+      dockerfile: ./back1/Dockerfile
+    image: demo-back1
+  back2:
+    build:
+      context: .
+      dockerfile: ./back2/Dockerfile
+    image: demo-back2

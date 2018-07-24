@@ -1,11 +1,12 @@
 FROM alpine
 
 #ENV port=8080
-#COPY /static /web/static
-COPY web /web
-COPY start.sh /start.sh
 
-#HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD [ "curl --fail -s http://sb.gaoxk.me/ || exit 1" ]
+COPY ./common/config/web/web /web
+COPY ./web/start.sh /start.sh
+COPY ./web/static /static
+
+HEALTHCHECK --interval=10s --timeout=10s --start-period=5s --retries=3 CMD [ "curl --fail http://web:8080/ || exit 1" ]
 
 
 RUN chmod +x ./start.sh && chmod +x ./web

@@ -13,7 +13,7 @@ services:
   back1:
     image: alpine
     container_name: demo_back1
-    command: apk add --no-cache curl 
+    command: apk add --no-cache curl
     volumes:
       - ./common/config/back1/back1:/back1:z
     entrypoint: ./back1

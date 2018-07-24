@@ -1,3 +1,11 @@
+#!/bin/bash +vx
+
+if [ $# != 1 ] 
+then 
+    echo "请输入一个yml/yaml文件作为参数"
+    exit 1
+fi
+
 # build back1
 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o ./common/config/back1/back1 github.com/youngbloood/docker-compose-demo/back1
 
@@ -20,4 +28,4 @@ cp -rf ./nginx/ ./common/config/nginx/
 docker-compose down
 
 # docker-compose up
-docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d
+docker-compose -f docker-compose.yml -f $1 up -d

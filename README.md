@@ -6,10 +6,16 @@
 ```
 #### 2.edit ./nginx/env
 ```
-replace the your.domain.com with value in step 1
+replace the `server_name` with value in step 1
 ```
 #### 3.run the command
+
+**development**
 ```
-./install.sh
+./install.sh  docker-compose.dev.yml
 ```
-#### 4.open the browser and input your.domain.com
+**production**
+```
+./install.sh  docker-compose.pro.yml
+```
+#### 4.visit [your.domain.com](your.domain.com) with your browser
