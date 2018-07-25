@@ -24,15 +24,6 @@ services:
     image: nginx
     container_name: demo_proxy
     restart: always
-    volumes:
-      - ./common/config/nginx/healthcheck.sh:/usr/local/bin/healthcheck.sh:z
-    command: chmod +x /usr/local/bin/healthcheck.sh
-    healthcheck:
-      test: sh /usr/local/bin/healthcheck.sh
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      # start_period: 40s
     ports:
       - 80:80
       - 443:443
