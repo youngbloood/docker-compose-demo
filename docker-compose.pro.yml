@@ -7,8 +7,9 @@ services:
     image: demo-web
     env_file:
       - ./web/env
+    command: chmod +x /etc/nginx/healthcheck.sh
     healthcheck:
-      test: sh /usr/local/bin/healthcheck.sh
+      test: sh /etc/nginx/healthcheck.sh
       interval: 30s
       timeout: 10s
       retries: 3
