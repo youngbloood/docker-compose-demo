@@ -2,6 +2,7 @@ version: '3'
 services:
   web:
     image: alpine
+    container_name: demo_web
     restart: always
     networks: 
       - demo
@@ -10,6 +11,7 @@ services:
       - back2
   back1:
     image: alpine
+    container_name: demo_back1
     restart: always
     networks:
       - demo
@@ -17,6 +19,7 @@ services:
       - back2
   back2:
     image: alpine
+    container_name: demo_back2
     restart: always
     networks:
       - demo
