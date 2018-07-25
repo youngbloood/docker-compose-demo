@@ -10,12 +10,14 @@ func main() {
 
 	engine := gin.Default()
 
-	engine.Static("/", "./static")
-	engine.GET("/api/ping", func(c *gin.Context) {
+	engine.POST("/api/ping", func(c *gin.Context) {
 		c.Writer.Write([]byte(`pong`))
 	})
 
+	engine.Static("/", "./static")
+
 	listen := os.Getenv("port")
+	listen = "8080"
 	engine.Run(":" + listen)
 
 }

@@ -6,7 +6,7 @@ COPY ./common/config/web/web /web
 COPY ./web/start.sh /start.sh
 COPY ./web/static /static
 COPY ./web/env /env
-COPY ./web/healthcheck.sh /usr/local/bin/healthcheck
+COPY ./web/healthcheck.sh /usr/local/bin/healthcheck.sh
 
 #HEALTHCHECK --interval=10s --timeout=10s --start-period=5s --retries=3 CMD [ "curl --fail http://web:8080/ || exit 1" ]
 
