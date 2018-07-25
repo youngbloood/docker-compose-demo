@@ -7,6 +7,12 @@ services:
     image: demo-web
     env_file:
       - ./web/env
+    healthcheck:
+      test: sh /usr/local/bin/healthcheck.sh
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      # start_period: 40s
   back1:
     build: 
       context: .

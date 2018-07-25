@@ -1,9 +1,9 @@
 #!/bin/bash
 set -eo pipefail
 
-port=$port
+#port=$port
 
-if ping="$(curl -f http://localhost:8080/api/ping)" && [ "$ping" = 'pong' ]; then
+if ping="$(curl -f http://localhost:$port/api/ping)" && [ "$ping" = 'pong' ]; then
 	exit 0
 fi
 
