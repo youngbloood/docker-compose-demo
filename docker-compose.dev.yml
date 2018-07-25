@@ -18,7 +18,7 @@ services:
       - ./common/config/back1/back1:/back1:z
     entrypoint: ./back1
     healthcheck:
-      test: curl -f http://back1:9090/api/ping || exit 1
+      test: sh healthcheck.sh
       interval: 10s
       timeout: 10s
       retries: 3
@@ -31,7 +31,7 @@ services:
       - ./common/config/back2/back2:/back2:z
     entrypoint: ./back2
     healthcheck:
-      test: curl -f http://back2:9090/api/ping || exit 1
+      test: sh healthcheck.sh
       interval: 10s
       timeout: 10s
       retries: 3
