@@ -1,6 +1,6 @@
 FROM alpine
 
-#ENV port=8080
+ENV port=8080
 
 COPY ./common/config/web/web /web
 COPY ./web/start.sh /start.sh
