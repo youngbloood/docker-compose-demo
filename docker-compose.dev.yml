@@ -17,12 +17,6 @@ services:
     volumes:
       - ./common/config/back1/back1:/back1:z
     entrypoint: ./back1
-    healthcheck:
-      test: sh healthcheck.sh
-      interval: 10s
-      timeout: 10s
-      retries: 3
-      # start_period: 40s
   back2:
     image: alpine
     container_name: demo_back2
@@ -30,12 +24,6 @@ services:
     volumes:
       - ./common/config/back2/back2:/back2:z
     entrypoint: ./back2
-    healthcheck:
-      test: sh healthcheck.sh
-      interval: 10s
-      timeout: 10s
-      retries: 3
-      # start_period: 40s
   proxy:
     image: nginx
     container_name: demo_proxy

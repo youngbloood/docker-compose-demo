@@ -12,8 +12,20 @@ services:
       context: .
       dockerfile: ./back1/Dockerfile
     image: demo-back1
+    healthcheck:
+      test: sh /usr/local/bin/healthcheck.sh
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      # start_period: 40s
   back2:
     build:
       context: .
       dockerfile: ./back2/Dockerfile
     image: demo-back2
+    healthcheck:
+      test: sh /usr/local/bin/healthcheck.sh
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      # start_period: 40s
