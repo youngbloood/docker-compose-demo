@@ -2,7 +2,7 @@
 
 if [ $# != 1 ] 
 then 
-    echo "请输入一个yml/yaml文件作为参数"
+    echo "input a param with yaml/yml file"
     exit 1
 fi
 
