@@ -18,6 +18,9 @@ func main() {
 	engine.Static("/", "./static")
 
 	listen := os.Getenv("port")
+	if listen == "" {
+		listen = "8080"
+	}
 	engine.Run(":" + listen)
 
 }
