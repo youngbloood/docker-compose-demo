@@ -3,8 +3,6 @@ version: '3'
 services:
 
   web:
-    image: alpine
-    container_name: demo_web
     volumes:
       - ./common/config/web/static:/static:z
       - ./common/config/web/web:/web:z
@@ -15,24 +13,18 @@ services:
     entrypoint: sh ./start.sh
 
   back1:
-    image: alpine
-    container_name: demo_back1
     volumes:
       - ./common/config/back1/back1:/back1:z
       - ./common/config/back1/healthcheck.sh:/usr/local/bin/healthcheck.sh:z
     entrypoint: ./back1
 
   back2:
-    image: alpine
-    container_name: demo_back2 
     volumes:
       - ./common/config/back2/back2:/back2:z
       - ./common/config/back2/healthcheck.sh:/usr/local/bin/healthcheck.sh:z
     entrypoint: ./back2
 
   proxy:
-    image: nginx
-    container_name: demo_proxy
     volumes:
       - ./common/config/nginx/nginx.conf:/etc/nginx/nginx.conf:z
       - ./common/config/nginx/healthcheck.sh:/usr/local/bin/healthcheck.sh:z
