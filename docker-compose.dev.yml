@@ -6,7 +6,7 @@ services:
     image: alpine
     container_name: demo_web
     volumes:
-      - ./web/static:/static:z
+      - ./common/config/web/static:/static:z
       - ./common/config/web/web:/web:z
       - ./common/config/web/start.sh:/start.sh:z
       - ./common/config/web/healthcheck.sh:/usr/local/bin/healthcheck.sh:z
