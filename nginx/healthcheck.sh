@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-if err="$(curl --help)" && ["$err" =~ "curl: not found"]; then
+if err="$(curl --help)" && [["$curl" =~ "curl: not found"]]; then
 	apt update 
 	apt install curl -y
 fi

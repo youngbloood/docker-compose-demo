@@ -3,7 +3,7 @@ set -eo pipefail
 
 echo $port
 
-if err="$(curl --help)" && ["$err" =~ "curl: not found"]; then
+if err="$(curl --help)" && [["$curl" =~ "curl: not found"]]; then
 	apk add --no-cache curl
 fi
 
