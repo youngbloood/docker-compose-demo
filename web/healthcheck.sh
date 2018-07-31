@@ -3,6 +3,10 @@ set -eo pipefail
 
 echo $port
 
+if err="$curl" && ["$curl" =~ "curl: not found"]; then
+	apk add --no-cache curl
+fi
+
 if ping="$(curl  -X POST  http://127.0.0.1:$port/api/ping)" && [ "$ping" = 'pong' ]; then
 	exit 0
 fi
