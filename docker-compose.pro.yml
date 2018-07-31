@@ -1,5 +1,7 @@
 version: '3'
+
 services:
+
   web:
     build:
       context: .
@@ -19,7 +21,7 @@ services:
       context: .
       dockerfile: ./back2/Dockerfile
     image: demo-back2
-    
+
   proxy:
     build:
       context: .

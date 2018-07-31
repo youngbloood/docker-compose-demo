@@ -10,6 +10,7 @@ func main() {
 
 	engine := gin.Default()
 
+	// healthcheck
 	engine.POST("/api/ping", func(c *gin.Context) {
 		c.Writer.Write([]byte(`pong`))
 	})
@@ -17,7 +18,6 @@ func main() {
 	engine.Static("/", "./static")
 
 	listen := os.Getenv("port")
-	listen = "8080"
 	engine.Run(":" + listen)
 
 }

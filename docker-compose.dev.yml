@@ -1,5 +1,7 @@
 version: '3'
+
 services:
+
   web:
     image: alpine
     container_name: demo_web
@@ -10,6 +12,7 @@ services:
       - ./common/config/web/healthcheck.sh:/usr/local/bin/healthcheck.sh:z
     env_file:
       - ./common/config/web/env
+
   back1:
     image: alpine
     container_name: demo_back1
