@@ -32,6 +32,5 @@ services:
     volumes:
       - ./common/config/nginx/nginx.conf:/etc/nginx/nginx.conf:z
       - ./common/config/nginx/healthcheck.sh:/usr/local/bin/healthcheck.sh:z
-    command: chmod +x /usr/local/bin/healthcheck.sh && apt update && apt install curl -y
     ports:
       - 4443:4443
