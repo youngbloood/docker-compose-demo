@@ -31,7 +31,7 @@ cp ./nginx/nginx.conf ./common/config/nginx/nginx.conf
 docker-compose down
 
 # remove docker images
-docker rmi demo-web demo-back1 demo-back2  -f
+docker rmi demo-web demo-back1 demo-back2 demo-nginx -f
 
 # docker-compose up
 docker-compose -f docker-compose.yml -f $1 up -d
