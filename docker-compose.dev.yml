@@ -10,15 +10,12 @@ services:
       - ./common/config/web/healthcheck.sh:/usr/local/bin/healthcheck.sh:z
     env_file:
       - ./common/config/web/env
-    command: chmod +x /usr/local/bin/healthcheck.sh && chmod +x ./web && apk add --no-cache curl && /bin/ash ./start.sh
-
   back1:
     image: alpine
     container_name: demo_back1
     volumes:
       - ./common/config/back1/back1:/back1:z
       - ./common/config/back1/healthcheck.sh:/usr/local/bin/healthcheck.sh:z
-    command: chmod +x /usr/local/bin/healthcheck.sh && apk add --no-cache curl
     entrypoint: ./back1
 
   back2:
@@ -27,7 +24,6 @@ services:
     volumes:
       - ./common/config/back2/back2:/back2:z
       - ./common/config/back2/healthcheck.sh:/usr/local/bin/healthcheck.sh:z
-    command: chmod +x /usr/local/bin/healthcheck.sh && apk add --no-cache curl
     entrypoint: ./back2
 
   proxy:

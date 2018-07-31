@@ -2,7 +2,8 @@
 
 
 if err="$curl" && ["$curl" =~ "curl: not found"]; then
-	apk add --no-cache curl
+	apt update 
+	apt install curl -y
 fi
 
 if ping="$(curl -f -S  http://localhost)" && ["$ping" != '']; then
