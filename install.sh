@@ -31,6 +31,10 @@ cp ./web/env ./common/config/web/
 # cp healthcheck.sh
 cp ./web/healthcheck.sh ./common/config/web/healthcheck.sh
 
+# cp static
+cp -r ./web/static ./common/config/web
+
+# nginx
 # cp healthcheck.sh
 cp ./nginx/healthcheck.sh ./common/config/nginx/healthcheck.sh
 
