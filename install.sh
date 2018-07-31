@@ -22,7 +22,7 @@ cp ./web/start.sh ./common/config/web/
 cp ./web/env ./common/config/web/
 
 # cp nginx.conf and env
-cp -rf ./nginx/ ./common/config/
+cp -rf ./nginx/ ./common/config/nginx/
 
 # docker-compose down
 docker-compose down
