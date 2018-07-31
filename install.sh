@@ -18,11 +18,14 @@ CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o ./common/config/web/web github
 # cp start.sh
 cp ./web/start.sh ./common/config/web/
 
-# cp env web
+# cp env of web
 cp ./web/env ./common/config/web/
 
-# cp nginx.conf and env
-cp -rf ./nginx/ ./common/config/nginx/
+# cp healthcheck.sh
+cp ./nginx/healthcheck.sh ./common/config/nginx/healthcheck.sh
+
+#cp nginx.conf 
+cp ./nginx/nginx.conf ./common/config/nginx/nginx.conf
 
 # docker-compose down
 docker-compose down
