@@ -15,11 +15,21 @@ CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o ./common/config/back2/back2 gi
 # build web
 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o ./common/config/web/web github.com/youngbloood/docker-compose-demo/web
 
+# back1
+cp ./back1/healthcheck.sh ./common/config/back1/healthcheck.sh
+
+# back2
+cp ./back2/healthcheck.sh ./common/config/back2/healthcheck.sh
+
+# web
 # cp start.sh
 cp ./web/start.sh ./common/config/web/
 
 # cp env of web
 cp ./web/env ./common/config/web/
+
+# cp healthcheck.sh
+cp ./web/healthcheck.sh ./common/config/web/healthcheck.sh
 
 # cp healthcheck.sh
 cp ./nginx/healthcheck.sh ./common/config/nginx/healthcheck.sh
