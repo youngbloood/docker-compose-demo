@@ -9,6 +9,13 @@ services:
     depends_on:
       - back1
       - back2
+    healthcheck:
+      test: sh /usr/local/bin/healthcheck.sh
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      # start_period: 40s
+
   back1:
     image: alpine
     container_name: demo_back1
@@ -17,12 +24,26 @@ services:
       - demo
     depends_on:
       - back2
+    healthcheck:
+      test: sh /usr/local/bin/healthcheck.sh
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      # start_period: 40s
+
   back2:
     image: alpine
     container_name: demo_back2
     restart: always
     networks:
       - demo
+    healthcheck:
+      test: sh /usr/local/bin/healthcheck.sh
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      # start_period: 40s
+
   proxy:
     image: nginx
     container_name: demo_proxy
@@ -36,6 +57,13 @@ services:
       - back2
     networks: 
       - demo
+    healthcheck:
+      test: sh /usr/local/bin/healthcheck.sh
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      # start_period: 40s
+      
 networks: 
   demo:
     external: false
