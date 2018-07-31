@@ -12,6 +12,7 @@ services:
       - ./common/config/web/healthcheck.sh:/usr/local/bin/healthcheck.sh:z
     env_file:
       - ./common/config/web/env
+    entrypoint: sh ./start.sh
 
   back1:
     image: alpine
