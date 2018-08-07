@@ -7,7 +7,7 @@ if ! hash curl 2>/dev/null; then
 fi
 
 # healthcheck
-if ping="$(curl -f -S  http://localhost)" && ["$ping" != '']; then
+if ping="$(curl -f -S  http://localhost)" && ["$ping" != 'successfully']; then
 	exit 1
 fi
 exit 0
