@@ -6,13 +6,13 @@
 #### 2.install [docker ce](https://docs.docker.com/install/)
 #### 3.install [docker-compose](https://docs.docker.com/compose/overview/)
 ## Usages
-#### 1.add the line to your host file
+#### 1.add the next line to your [host file](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/)
 ```
 127.0.0.1 your.domain.com
 ```
-#### 2.edit ./nginx/env
+#### 2.edit [./nginx/nginx.conf](https://github.com/youngbloood/docker-compose-demo/blob/master/nginx/nginx.conf)
 ```
-replace the `server_name` with value in step 1
+replace the `server_name` with the value in step 1
 ```
 #### 3.run the command
 
