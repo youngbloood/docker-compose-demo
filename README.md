@@ -1,4 +1,10 @@
 # docker-compose-demo
+
+## Prepare
+
+#### 1.install [go](http://www.golang.org/)
+#### 2.install [docker ce](https://docs.docker.com/install/)
+#### 3.install [docker-compose](https://docs.docker.com/compose/overview/)
 ## Usages
 #### 1.add the line to your host file
 ```
